@@ -18,6 +18,8 @@ export const COLORS = {
     purple: "#6B3CE9",
     lightpurple: "#F3EFFF",
 
+    
+
     yellow: "#FFC664",
     lightyellow: "#FFF9EC",
 
@@ -29,6 +31,11 @@ export const COLORS = {
     darkgray: "#C3C6C7",
 
     transparent: "transparent",
+
+    ntc:"#002e78",
+    ncell:"#622691",
+    smartcell:"#da1f3d",
+    postpaid:"#002e78",
 };
 
 export const SIZES = {

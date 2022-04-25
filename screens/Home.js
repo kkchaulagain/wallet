@@ -9,7 +9,7 @@ import {
 } from "react-native"
 import { COLORS, SIZES, FONTS, icons, images } from "../constants"
 
-const Home = () => {
+const Home = ({navigation}) => {
 
     const featuresData = [
         {
@@ -177,7 +177,7 @@ const Home = () => {
         const renderItem = ({ item }) => (
             <TouchableOpacity
                 style={{ marginBottom: SIZES.padding * 2, width: 60, alignItems: 'center' }}
-                onPress={() => console.log(item.description)}
+                onPress={() => navigation.navigate('TopUp')}
             >
                 <View
                     style={{
