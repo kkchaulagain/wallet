@@ -17,12 +17,12 @@ const TopUp = ({ navigation }) => {
     const [showAmount, setShowAmount] = useState(false);
     const [selectedService, setSelectedService] = useState('ntc');
     const onMobileInput = (input) => {
-        const allowedProviders =['ntc','ncell','postpaid','smartcell'];
+        const allowedProviders = ['ntc', 'ncell', 'postpaid', 'smartcell'];
         if (input.length >= 3) {
             let service = findServiceByNumber(input);
             if (allowedProviders.includes(service)) {
                 setSelectedService(service);
-            }else{
+            } else {
                 setSelectedService(null);
             }
         }
@@ -84,6 +84,10 @@ const TopUp = ({ navigation }) => {
         )
     }
 
+    function renderPricing() {
+
+    }
+
     function renderInputForm() {
         return (
             <View style={{
@@ -99,7 +103,7 @@ const TopUp = ({ navigation }) => {
                     width: SIZES.width * 0.9,
                     height: SIZES.height * 0.06,
                     borderWidth: 1,
-                    borderColor: selectedService === null ?COLORS.red :COLORS.gray,
+                    borderColor: selectedService === null ? COLORS.red : COLORS.gray,
                     borderRadius: SIZES.base,
                 }}>
                     <TextInput
@@ -156,12 +160,12 @@ const TopUp = ({ navigation }) => {
         )
     }
 
-    const service = (name, color,code) => {
-        
+    const service = (name, color, code) => {
+
         return (
             <View style={{
-                width: selectedService == code? SIZES.width * 0.3: SIZES.width * 0.2,
-                height: selectedService == code? SIZES.height * 0.06:SIZES.height * 0.058,
+                width: selectedService == code ? SIZES.width * 0.3 : SIZES.width * 0.2,
+                height: selectedService == code ? SIZES.height * 0.06 : SIZES.height * 0.058,
                 borderColor: COLORS.gray,
                 borderWidth: 1,
                 justifyContent: "center",
@@ -169,13 +173,13 @@ const TopUp = ({ navigation }) => {
                 padding: SIZES.padding,
                 backgroundColor: color,
                 color: COLORS.white,
-                elevation: selectedService == code? 5: 0,
+                elevation: selectedService == code ? 5 : 0,
                 borderRadius: SIZES.base,
             }}>
                 <Text
                     style={{
                         color: COLORS.white,
-                        
+
                         ...FONTS.body5,
                     }}
                 >{name}</Text>
@@ -192,10 +196,10 @@ const TopUp = ({ navigation }) => {
                 marginTop: SIZES.base * 2,
                 // flex:1,
             }}>
-                {service("NTC", COLORS.ntc,'ntc')}
-                {service("Ncell", COLORS.ncell,'ncell')}
-                {service("SmartCell", COLORS.smartcell,'smartcell')}
-                {service("Postpaid", COLORS.postpaid,'postpaid')}
+                {service("NTC", COLORS.ntc, 'ntc')}
+                {service("Ncell", COLORS.ncell, 'ncell')}
+                {service("SmartCell", COLORS.smartcell, 'smartcell')}
+                {service("Postpaid", COLORS.postpaid, 'postpaid')}
             </View>
         )
 
